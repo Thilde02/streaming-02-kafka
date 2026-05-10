@@ -4,6 +4,12 @@ Kafka consumer: full pipeline example.
 
 Reads sales messages from a Kafka topic.
 
+Start with main() at the bottom.
+Work up to see how it all fits together.
+
+Many functions are standard helpers
+and should not need project-specific modifications.
+
 Author: Denise Case
 Date: 2026-05
 
