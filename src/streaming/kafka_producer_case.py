@@ -9,7 +9,7 @@ Work up to see how it all fits together.
 Many functions are standard helpers
 and should not need project-specific modifications.
 
-Author: Denise Case
+Author: Tiffany Hildebrand
 Date: 2026-05
 
 Terminal command to run this file from the root project folder:
@@ -62,7 +62,7 @@ MESSAGE_INTERVAL_SECONDS: Final[float] = float(msg_interval_seconds)
 
 # === DECLARE CONSTANT PATHS ===
 
-ROOT_DIR: Final[Path] = Path.cwd()
+ROOT_DIR: Final[Path] = Path.cwd().parent
 DATA_DIR: Final[Path] = ROOT_DIR / "data"
 SALES_CSV: Final[Path] = DATA_DIR / "sales.csv"
 
