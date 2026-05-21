@@ -192,19 +192,18 @@ def initialize_output() -> RunningStats:
 
 
 def process_message(row: dict[str, Any]) -> dict[str, Any]:
-    """Process one consumed message.
-
-    Module 02 does not validate, enrich, chart, or store messages yet.
-    It simply returns the raw Kafka message.
-
-    Arguments:
-        row: A raw consumed Kafka message row.
-
-    Returns:
-        The same row.
-    """
     LOG.info("Processing raw message.")
+
+    # Phase 5 modification: Add a new calculated field
+    try:
+        unit_price = float(row["unit_price"])
+        quantity = int(row["quantity"])
+        row["order_total"] = unit_price * quantity
+    except Exception:
+        row["order_total"] = None
+
     return row
+
 
 
 def consume_messages(consumer: Any) -> int:
